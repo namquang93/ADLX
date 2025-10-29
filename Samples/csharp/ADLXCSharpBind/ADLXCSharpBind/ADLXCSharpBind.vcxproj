@@ -131,7 +131,9 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)XboxGamingBarHelper\ADLXDepends" /y</Command>
+      <Command>xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)XboxGamingBarHelper\ADLXDepends" /i /y
+xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)DisplayEvents\DisplayEvents\ADLXDepends" /i /y
+xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)DisplayInfo\DisplayInfo\ADLXDepends" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,7 +155,9 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)XboxGamingBarHelper\ADLXDepends" /y</Command>
+      <Command>xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)XboxGamingBarHelper\ADLXDepends" /i /y
+xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)DisplayEvents\DisplayEvents\ADLXDepends" /i /y
+xcopy "$(ProjectDir)out\*.cs" "$(SolutionDir)DisplayInfo\DisplayInfo\ADLXDepends" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
