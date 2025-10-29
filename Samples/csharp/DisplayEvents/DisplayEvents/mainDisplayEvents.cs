@@ -51,6 +51,7 @@ namespace DisplayEvents
                             }
                             catch (Exception e)
                             {
+                                Console.WriteLine(e.ToString());
                                 // Exception
                             }
                             hand.RemoveDisplayListEventListener(call);

@@ -8,3 +8,7 @@ Samples/csharp/DisplayEvents/DisplayEvents/obj
 Samples/csharp/DisplayInfo/DisplayInfo/ADLXDepends
 Samples/csharp/DisplayInfo/DisplayInfo/obj
 Samples/csharp/x64
+Samples/csharp/.vs
+Samples/csharp/DisplayEvents/DisplayEvents/.vs
+Samples/csharp/DisplayInfo/DisplayInfo/.vs
+Samples/csharp/XboxGamingBarHelper/ADLXDepends/*.cs

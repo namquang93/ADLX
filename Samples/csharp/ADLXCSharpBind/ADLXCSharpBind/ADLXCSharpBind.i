@@ -9,6 +9,7 @@
 #include "../../../../SDK/Include/ADLXDefines.h"
 #include "../../../../SDK/Include/ICollections.h"
 #include "../../../../SDK/Include/IDisplays.h"
+#include "../../../../SDK/Include/IPerformanceMonitoring.h"
 #include "../../../../SDK/Include/ISystem.h"
 #include "../../../../SDK/Include/ILog.h"
 #include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -98,6 +99,7 @@ typedef WCHAR TCHAR;
 %include "../../../../SDK/Include/ADLXDefines.h"
 %include "../../../../SDK/Include/ICollections.h"
 %include "../../../../SDK/Include/IDisplays.h"
+%include "../../../../SDK/Include/IPerformanceMonitoring.h"
 %include "../../../../SDK/Include/ISystem.h"
 %include "../../../../SDK/Include/ILog.h"
 %include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -108,6 +110,8 @@ using namespace adlx;
 %pointer_functions(adlx_int, intP);
 %pointer_functions(double, doubleP);
 %pointer_functions(adlx_uint, uintP);
+%pointer_functions(adlx_bool, boolP);
+%pointer_functions(adlx_int64, int64P);
 %pointer_functions(ADLX_DISPLAY_TYPE, displayTypeP);
 %pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, disConnectTypeP);
 %pointer_functions(ADLX_DISPLAY_SCAN_TYPE, disScanTypeP);
@@ -156,4 +160,10 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXDisplayList*, displayListP_Ptr);
 %ppointer_functions(IADLXDisplay*, displayP_Ptr);
 %ppointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
+%ppointer_functions(IADLXPerformanceMonitoringServices*, performanceMonitoringSerP_Ptr);
+%ppointer_functions(IADLXSystemMetricsSupport*, systemMetricsSupportP_Ptr);
+%ppointer_functions(IADLXAllMetricsList*, allMetricsListP_Ptr);
+%ppointer_functions(IADLXAllMetrics*, allMetricsP_Ptr);
+%ppointer_functions(IADLXFPS*, fpsP_Ptr);
+%ppointer_functions(IADLXSystemMetrics*, systemMetricsP_Ptr);
 %ppointer_functions(char*, charP_Ptr);

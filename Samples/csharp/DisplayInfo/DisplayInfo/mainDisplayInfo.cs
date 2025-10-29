@@ -116,6 +116,84 @@ namespace DisplayInfo
                         // Release display services interface
                         displayService.Release();
                     }
+
+                    // Add sample for performance monitoring services.
+                    SWIGTYPE_p_p_adlx__IADLXPerformanceMonitoringServices performanceMonitoringServicesPointer = ADLX.new_performanceMonitoringSerP_Ptr();
+                    res = sys.GetPerformanceMonitoringServices(performanceMonitoringServicesPointer);
+                    if (res == ADLX_RESULT.ADLX_OK)
+                    {
+                        IADLXPerformanceMonitoringServices performanceMonitoringServices = ADLX.performanceMonitoringSerP_Ptr_value(performanceMonitoringServicesPointer);
+                        var systemMetricsSupportPointer = ADLX.new_systemMetricsSupportP_Ptr();
+                        res = performanceMonitoringServices.GetSupportedSystemMetrics(systemMetricsSupportPointer);
+                        if (res == ADLX_RESULT.ADLX_OK)
+                        {
+                            IADLXSystemMetricsSupport systemMetricSupport = ADLX.systemMetricsSupportP_Ptr_value(systemMetricsSupportPointer);
+                            SWIGTYPE_p_bool pSupportedCPUUsage = ADLX.new_boolP();
+                            ADLX_RESULT checkCPUUsageSupportedResult = systemMetricSupport.IsSupportedCPUUsage(pSupportedCPUUsage);
+                            if (checkCPUUsageSupportedResult == ADLX_RESULT.ADLX_OK)
+                            {
+                                var isSupportedCPUUsage = ADLX.boolP_value(pSupportedCPUUsage);
+                                Console.WriteLine($"{(isSupportedCPUUsage ? "Support" : "Doesn't support")} CPU usage");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Can't determine CPU usage support");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can't get supported system metrics");
+                        }
+
+                        SWIGTYPE_p_p_adlx__IADLXAllMetricsList allMetricsListPointer = ADLX.new_allMetricsListP_Ptr();
+                        res = performanceMonitoringServices.GetAllMetricsHistory(0, 1000, allMetricsListPointer);
+                        if (res == ADLX_RESULT.ADLX_OK)
+                        {
+                            IADLXAllMetricsList allMetricsList = ADLX.allMetricsListP_Ptr_value(allMetricsListPointer);
+                            Console.WriteLine($"All metrics list Size={allMetricsList.Size()} Acquire={allMetricsList.Acquire()}");
+                            //allMetricsList.QueryInterface()
+                        }
+
+                        SWIGTYPE_p_p_adlx__IADLXAllMetrics allMetricsPointer = ADLX.new_allMetricsP_Ptr();
+                        performanceMonitoringServices.GetCurrentAllMetrics(allMetricsPointer);
+                        IADLXAllMetrics allMetrics = ADLX.allMetricsP_Ptr_value(allMetricsPointer);
+
+                        SWIGTYPE_p_long_long timestampPointer = ADLX.new_int64P();
+                        allMetrics.TimeStamp(timestampPointer);
+                        long timeStamp = ADLX.int64P_value(timestampPointer);
+
+                        SWIGTYPE_p_p_adlx__IADLXFPS adlxFPSPointer = ADLX.new_fpsP_Ptr();
+                        allMetrics.GetFPS(adlxFPSPointer);
+                        IADLXFPS adlxFPS = ADLX.fpsP_Ptr_value(adlxFPSPointer);
+                        SWIGTYPE_p_int fpsPointer = ADLX.new_intP();
+                        adlxFPS.FPS(fpsPointer);
+                        int fps = ADLX.intP_value(fpsPointer);
+
+                        SWIGTYPE_p_p_adlx__IADLXSystemMetrics systemMetricsPointer = ADLX.new_systemMetricsP_Ptr();
+                        allMetrics.GetSystemMetrics(systemMetricsPointer);
+                        IADLXSystemMetrics systemMetrics = ADLX.systemMetricsP_Ptr_value(systemMetricsPointer);
+
+                        SWIGTYPE_p_double cpuUsagePointer = ADLX.new_doubleP();
+                        systemMetrics.CPUUsage(cpuUsagePointer);
+                        double cpuUsage = ADLX.doubleP_value(cpuUsagePointer);
+
+                        SWIGTYPE_p_int smartShiftPointer = ADLX.new_intP();
+                        systemMetrics.SmartShift(smartShiftPointer);
+                        int smartShift = ADLX.intP_value(smartShiftPointer);
+
+                        SWIGTYPE_p_int systemRAMPointer = ADLX.new_intP();
+                        systemMetrics.SystemRAM(systemRAMPointer);
+                        int systemRAM = ADLX.intP_value(systemRAMPointer);
+
+                        //allMetrics.GetGPUMetrics()
+                        //sys.GetGPUs()
+
+                        Console.WriteLine($"[{timeStamp}] FPS={fps} CPUUsage={cpuUsage} SmartShift={smartShift} RAM={systemRAM}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Can't get performance monitoring services");
+                    }
                 }
             }
             else
