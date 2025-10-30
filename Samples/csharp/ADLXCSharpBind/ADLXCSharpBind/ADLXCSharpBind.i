@@ -10,6 +10,8 @@
 #include "../../../../SDK/Include/ICollections.h"
 #include "../../../../SDK/Include/IDisplays.h"
 #include "../../../../SDK/Include/IPerformanceMonitoring.h"
+#include "../../../../SDK/Include/ADLXStructures.h"
+#include "../../../../SDK/Include/I3DSettings.h"
 #include "../../../../SDK/Include/ISystem.h"
 #include "../../../../SDK/Include/ILog.h"
 #include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -100,6 +102,8 @@ typedef WCHAR TCHAR;
 %include "../../../../SDK/Include/ICollections.h"
 %include "../../../../SDK/Include/IDisplays.h"
 %include "../../../../SDK/Include/IPerformanceMonitoring.h"
+%include "../../../../SDK/Include/I3DSettings.h"
+%include "../../../../SDK/Include/ADLXStructures.h"
 %include "../../../../SDK/Include/ISystem.h"
 %include "../../../../SDK/Include/ILog.h"
 %include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -115,6 +119,11 @@ using namespace adlx;
 %pointer_functions(ADLX_DISPLAY_TYPE, displayTypeP);
 %pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, disConnectTypeP);
 %pointer_functions(ADLX_DISPLAY_SCAN_TYPE, disScanTypeP);
+%pointer_functions(ADLX_IntRange, intRangeP);
+%pointer_functions(ADLX_ANISOTROPIC_FILTERING_LEVEL, anisotropicFilteringLevelP);
+%pointer_functions(ADLX_ANTI_ALIASING_LEVEL, antiAliasingLevelP);
+%pointer_functions(ADLX_ANTI_ALIASING_MODE, antiAliasingModeP);
+%pointer_functions(ADLX_ANTI_ALIASING_METHOD, antiAliasingMethodP);
 %pointer_functions(adlx_size, adlx_sizeP);
 
 // T** ppointer
@@ -169,4 +178,10 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXGPUList*, gpuListP_Ptr);
 %ppointer_functions(IADLXGPU*, gpuP_Ptr);
 %ppointer_functions(IADLXGPUMetrics*, gpuMetricsP_Ptr);
+%ppointer_functions(IADLXFPSList*, fpsListP_Ptr);
+%ppointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
+%ppointer_functions(IADLX3DSettingsServices*, threeDSettingsSerP_Ptr);
+%ppointer_functions(IADLX3DSettingsChangedHandling*, threeDSettingsChangedHandlingP_Ptr);
+%ppointer_functions(IADLX3DAnisotropicFiltering*, threeDAnisotropicFilteringP_Ptr);
+%ppointer_functions(IADLX3DAntiAliasing*, threeDAntiAliasingP_Ptr);
 %ppointer_functions(char*, charP_Ptr);
