@@ -322,14 +322,85 @@ namespace DisplayInfo
                             SWIGTYPE_p_ADLX_ANTI_ALIASING_LEVEL antiAliasingLevelPointer = ADLX.new_antiAliasingLevelP();
                             threeDAntiAliasing.GetLevel(antiAliasingLevelPointer);
                             ADLX_ANTI_ALIASING_LEVEL antiAliasingLevel = ADLX.antiAliasingLevelP_value(antiAliasingLevelPointer);
-                            var antiAliasingMethodPointer = ADLX.new_antiAliasingMethodP();
+                            SWIGTYPE_p_ADLX_ANTI_ALIASING_METHOD antiAliasingMethodPointer = ADLX.new_antiAliasingMethodP();
                             threeDAntiAliasing.GetMethod(antiAliasingMethodPointer);
-                            var antiAliasingMethod = ADLX.antiAliasingMethodP_value(antiAliasingMethodPointer);
-                            var antiAliasingModePointer = ADLX.new_antiAliasingModeP();
+                            ADLX_ANTI_ALIASING_METHOD antiAliasingMethod = ADLX.antiAliasingMethodP_value(antiAliasingMethodPointer);
+                            SWIGTYPE_p_ADLX_ANTI_ALIASING_MODE antiAliasingModePointer = ADLX.new_antiAliasingModeP();
                             threeDAntiAliasing.GetMode(antiAliasingModePointer);
-                            var antiAliasingMode = ADLX.antiAliasingModeP_value(antiAliasingModePointer);
+                            ADLX_ANTI_ALIASING_MODE antiAliasingMode = ADLX.antiAliasingModeP_value(antiAliasingModePointer);
                             Console.WriteLine($"AntiAliasing Supported={threeDAntiAliasingSupported} Level={antiAliasingLevel} Method={antiAliasingMethod} Mode={antiAliasingMode}");
                             threeDAntiAliasing.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DAntiLag threeDAntiLagPointer = ADLX.new_threeDAntiLagP_Ptr();
+                            threeDSettingsServices.GetAntiLag(gpu, threeDAntiLagPointer);
+                            IADLX3DAntiLag threeDAntiLag = ADLX.threeDAntiLagP_Ptr_value(threeDAntiLagPointer);
+                            threeDAntiLag.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DBoost threeDBoostPointer = ADLX.new_threeDBoostP_Ptr();
+                            threeDSettingsServices.GetBoost(gpu, threeDBoostPointer);
+                            IADLX3DBoost threeDBoost = ADLX.threeDBoostP_Ptr_value(threeDBoostPointer);
+                            //threeDBoost.SetEnabled(true);
+                            threeDBoost.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DChill threeDChillPointer = ADLX.new_threeDChillP_Ptr();
+                            threeDSettingsServices.GetChill(gpu, threeDChillPointer);
+                            IADLX3DChill threeDChill = ADLX.threeDChillP_Ptr_value(threeDChillPointer);
+                            threeDChill.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DEnhancedSync threeDEnhancedSyncPointer = ADLX.new_threeDEnhancedSyncP_Ptr();
+                            threeDSettingsServices.GetEnhancedSync(gpu, threeDEnhancedSyncPointer);
+                            IADLX3DEnhancedSync threeDEnhancedSync = ADLX.threeDEnhancedSyncP_Ptr_value(threeDEnhancedSyncPointer);
+                            //threeDEnhancedSync.SetEnabled(false);
+                            threeDEnhancedSync.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DFrameRateTargetControl threeDFrameRateTargetControlPointer = ADLX.new_threeDFrameRateTargetControlP_Ptr();
+                            threeDSettingsServices.GetFrameRateTargetControl(gpu, threeDFrameRateTargetControlPointer);
+                            IADLX3DFrameRateTargetControl threeDFrameRateTargetControl = ADLX.threeDFrameRateTargetControlP_Ptr_value(threeDFrameRateTargetControlPointer);
+                            //threeDFrameRateTargetControl.SetFPS(60);
+                            threeDFrameRateTargetControl.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DImageSharpening threeDImageSharpeningPointer = ADLX.new_threeDImageSharpeningP_Ptr();
+                            threeDSettingsServices.GetImageSharpening(gpu, threeDImageSharpeningPointer);
+                            IADLX3DImageSharpening threeDImageSharpening = ADLX.threeDImageSharpeningP_Ptr_value(threeDImageSharpeningPointer);
+                            //threeDImageSharpening.SetSharpness(50);
+                            threeDImageSharpening.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DMorphologicalAntiAliasing threeDMorphologicalAntiAliasingPointer = ADLX.new_threeDMorphologicalAntiAliasingP_Ptr();
+                            threeDSettingsServices.GetMorphologicalAntiAliasing(gpu, threeDMorphologicalAntiAliasingPointer);
+                            IADLX3DMorphologicalAntiAliasing threeDMorphologicalAntiAliasing = ADLX.threeDMorphologicalAntiAliasingP_Ptr_value(threeDMorphologicalAntiAliasingPointer);
+                            //threeDMorphologicalAntiAliasing.SetEnabled(false);
+                            threeDMorphologicalAntiAliasing.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DRadeonSuperResolution threeDRadeonSuperResolutionPointer = ADLX.new_threeDRadeonSuperResolutionP_Ptr();
+                            threeDSettingsServices.GetRadeonSuperResolution(threeDRadeonSuperResolutionPointer);
+                            IADLX3DRadeonSuperResolution threeDRadeonSuperResolution = ADLX.threeDRadeonSuperResolutionP_Ptr_value(threeDRadeonSuperResolutionPointer);
+                            //threeDRadeonSuperResolution.SetEnabled(false);
+                            threeDRadeonSuperResolution.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DResetShaderCache threeDResetShaderCachePointer = ADLX.new_threeDResetShaderCacheP_Ptr();
+                            threeDSettingsServices.GetResetShaderCache(gpu, threeDResetShaderCachePointer);
+                            IADLX3DResetShaderCache threeDResetShaderCache = ADLX.threeDResetShaderCacheP_Ptr_value(threeDResetShaderCachePointer);
+                            //threeDResetShaderCache.ResetShaderCache();
+                            threeDResetShaderCache.Release();
+
+                            SWIGTYPE_p_p_adlx__IADLX3DTessellation threeDTessellationPointer = ADLX.new_threeDTessellationP_Ptr();
+                            threeDSettingsServices.GetTessellation(gpu, threeDTessellationPointer);
+                            IADLX3DTessellation threeDTessellation = ADLX.threeDTessellationP_Ptr_value(threeDTessellationPointer);
+                            SWIGTYPE_p_ADLX_TESSELLATION_LEVEL tessellationLevelPointer = ADLX.new_tesselationLevelP();
+                            threeDTessellation.GetLevel(tessellationLevelPointer);
+                            ADLX_TESSELLATION_LEVEL tessellationLevel = ADLX.tesselationLevelP_value(tessellationLevelPointer);
+                            SWIGTYPE_p_ADLX_TESSELLATION_MODE tessellationModePointer = ADLX.new_tesselationModeP();
+                            threeDTessellation.GetMode(tessellationModePointer);
+                            ADLX_TESSELLATION_MODE tessellationMode = ADLX.tesselationModeP_value(tessellationModePointer);
+                            threeDTessellation.Release();
+
+                            var threeDWaitForVerticalRefreshPointer = ADLX.new_threeDWaitForVerticalRefreshP_Ptr();
+                            threeDSettingsServices.GetWaitForVerticalRefresh(gpu, threeDWaitForVerticalRefreshPointer);
+                            var threeDWaitForVerticalRefresh = ADLX.threeDWaitForVerticalRefreshP_Ptr_value(threeDWaitForVerticalRefreshPointer);
+                            var waitForVerticalRefreshPointer = ADLX.new_waitForVerticalRefreshModeP();
+                            threeDWaitForVerticalRefresh.GetMode(waitForVerticalRefreshPointer);
+                            var waitForVerticalRefresh = ADLX.waitForVerticalRefreshModeP_value(waitForVerticalRefreshPointer);
+                            threeDWaitForVerticalRefresh.Release();
 
                             gpu.Release();
                         }

@@ -124,6 +124,9 @@ using namespace adlx;
 %pointer_functions(ADLX_ANTI_ALIASING_LEVEL, antiAliasingLevelP);
 %pointer_functions(ADLX_ANTI_ALIASING_MODE, antiAliasingModeP);
 %pointer_functions(ADLX_ANTI_ALIASING_METHOD, antiAliasingMethodP);
+%pointer_functions(ADLX_TESSELLATION_LEVEL, tesselationLevelP);
+%pointer_functions(ADLX_TESSELLATION_MODE, tesselationModeP);
+%pointer_functions(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE, waitForVerticalRefreshModeP);
 %pointer_functions(adlx_size, adlx_sizeP);
 
 // T** ppointer
@@ -184,4 +187,15 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLX3DSettingsChangedHandling*, threeDSettingsChangedHandlingP_Ptr);
 %ppointer_functions(IADLX3DAnisotropicFiltering*, threeDAnisotropicFilteringP_Ptr);
 %ppointer_functions(IADLX3DAntiAliasing*, threeDAntiAliasingP_Ptr);
+%ppointer_functions(IADLX3DAntiLag*, threeDAntiLagP_Ptr);
+%ppointer_functions(IADLX3DBoost*, threeDBoostP_Ptr);
+%ppointer_functions(IADLX3DChill*, threeDChillP_Ptr);
+%ppointer_functions(IADLX3DEnhancedSync*, threeDEnhancedSyncP_Ptr);
+%ppointer_functions(IADLX3DFrameRateTargetControl*, threeDFrameRateTargetControlP_Ptr);
+%ppointer_functions(IADLX3DImageSharpening*, threeDImageSharpeningP_Ptr);
+%ppointer_functions(IADLX3DMorphologicalAntiAliasing*, threeDMorphologicalAntiAliasingP_Ptr);
+%ppointer_functions(IADLX3DRadeonSuperResolution*, threeDRadeonSuperResolutionP_Ptr);
+%ppointer_functions(IADLX3DResetShaderCache*, threeDResetShaderCacheP_Ptr);
+%ppointer_functions(IADLX3DTessellation*, threeDTessellationP_Ptr);
+%ppointer_functions(IADLX3DWaitForVerticalRefresh*, threeDWaitForVerticalRefreshP_Ptr);
 %ppointer_functions(char*, charP_Ptr);
