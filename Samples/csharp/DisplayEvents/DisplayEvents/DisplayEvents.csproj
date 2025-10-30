@@ -177,14 +177,11 @@
     <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_TESSELLATION_MODE.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_adlx__IADLXDesktop.cs" />
-    <Compile Include="ADLXDepends\SWIGTYPE_p_adlx__IADLXPerformanceMonitoringServices.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_bool.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_double.cs" />
-    <Compile Include="ADLXDepends\SWIGTYPE_p_IADLXIntRange.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_int.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_long.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_long_long.cs" />
-    <Compile Include="ADLXDepends\SWIGTYPE_p_p_ADLX_IntRange.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAnisotropicFiltering.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAntiAliasing.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAntiLag.cs" />
@@ -238,7 +235,6 @@
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXSystemMetricsList.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXSystemMetricsSupport.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_char.cs" />
-    <Compile Include="ADLXDepends\SWIGTYPE_p_p_IADLXIntRange.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_void.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_size_t.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_unsigned_int.cs" />
@@ -247,5 +243,6 @@
     <Compile Include="ADLXDepends\SWIGTYPE_p_wchar_t.cs" />
     <Compile Include="mainDisplayEvents.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
