@@ -146,12 +146,16 @@ namespace DisplayInfo
                         }
 
                         SWIGTYPE_p_p_adlx__IADLXAllMetricsList allMetricsListPointer = ADLX.new_allMetricsListP_Ptr();
-                        res = performanceMonitoringServices.GetAllMetricsHistory(0, 1000, allMetricsListPointer);
+                        res = performanceMonitoringServices.GetAllMetricsHistory(0, 5, allMetricsListPointer);
                         if (res == ADLX_RESULT.ADLX_OK)
                         {
                             IADLXAllMetricsList allMetricsList = ADLX.allMetricsListP_Ptr_value(allMetricsListPointer);
-                            Console.WriteLine($"All metrics list Size={allMetricsList.Size()} Acquire={allMetricsList.Acquire()}");
+                            Console.WriteLine($"All metrics list Size={allMetricsList.Size()}");
                             //allMetricsList.QueryInterface()
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Can't get all metrics list");
                         }
 
                         SWIGTYPE_p_p_adlx__IADLXAllMetrics allMetricsPointer = ADLX.new_allMetricsP_Ptr();
@@ -185,10 +189,71 @@ namespace DisplayInfo
                         systemMetrics.SystemRAM(systemRAMPointer);
                         int systemRAM = ADLX.intP_value(systemRAMPointer);
 
-                        //allMetrics.GetGPUMetrics()
-                        //sys.GetGPUs()
-
                         Console.WriteLine($"[{timeStamp}] FPS={fps} CPUUsage={cpuUsage} SmartShift={smartShift} RAM={systemRAM}");
+
+                        SWIGTYPE_p_p_adlx__IADLXGPUList gpuListPointer = ADLX.new_gpuListP_Ptr();
+                        sys.GetGPUs(gpuListPointer);
+                        IADLXGPUList gpuList = ADLX.gpuListP_Ptr_value(gpuListPointer);
+                        for (uint i = 0; i < gpuList.Size(); i++)
+                        {
+                            SWIGTYPE_p_p_adlx__IADLXGPU gpuPointer = ADLX.new_gpuP_Ptr();
+                            gpuList.At(i, gpuPointer);
+                            IADLXGPU gpu = ADLX.gpuP_Ptr_value(gpuPointer);
+
+                            SWIGTYPE_p_p_adlx__IADLXGPUMetrics gpuMetricsPointer = ADLX.new_gpuMetricsP_Ptr();
+                            allMetrics.GetGPUMetrics(gpu, gpuMetricsPointer);
+                            IADLXGPUMetrics gpuMetrics = ADLX.gpuMetricsP_Ptr_value(gpuMetricsPointer);
+
+                            SWIGTYPE_p_long_long gpuTimestampPointer = ADLX.new_int64P();
+                            gpuMetrics.TimeStamp(gpuTimestampPointer);
+                            long gpuTimeStamp = ADLX.int64P_value(gpuTimestampPointer);
+
+                            var gpuClockSpeedPointer = ADLX.new_intP();
+                            gpuMetrics.GPUClockSpeed(gpuClockSpeedPointer);
+                            var gpuClockSpeed = ADLX.intP_value(gpuClockSpeedPointer);
+
+                            var gpuFanSpeedPointer = ADLX.new_intP();
+                            gpuMetrics.GPUFanSpeed(gpuFanSpeedPointer);
+                            var gpuFanSpeed = ADLX.intP_value(gpuFanSpeedPointer);
+
+                            var gpuHotspotTemperaturePointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUHotspotTemperature(gpuHotspotTemperaturePointer);
+                            var gpuHotspotTemperature = ADLX.doubleP_value(gpuHotspotTemperaturePointer);
+
+                            var gpuIntakeTemperaturePointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUIntakeTemperature(gpuIntakeTemperaturePointer);
+                            var gpuIntakeTemperature = ADLX.doubleP_value(gpuIntakeTemperaturePointer);
+
+                            var gpuPowerPointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUPower(gpuPowerPointer);
+                            var gpuPower = ADLX.doubleP_value(gpuPowerPointer);
+
+                            var gpuTemperaturePointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUTemperature(gpuTemperaturePointer);
+                            var gpuTemperature = ADLX.doubleP_value(gpuTemperaturePointer);
+
+                            var gpuTotalBoardPowerPointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUTotalBoardPower(gpuTotalBoardPowerPointer);
+                            var gpuTotalBoardPower = ADLX.doubleP_value(gpuTotalBoardPowerPointer);
+
+                            var gpuUsagePointer = ADLX.new_doubleP();
+                            gpuMetrics.GPUUsage(gpuUsagePointer);
+                            var gpuUsage = ADLX.doubleP_value(gpuUsagePointer);
+
+                            var gpuVoltagePointer = ADLX.new_intP();
+                            gpuMetrics.GPUVoltage(gpuVoltagePointer);
+                            var gpuVoltage = ADLX.intP_value(gpuVoltagePointer);
+
+                            var gpuVRAMPointer = ADLX.new_intP();
+                            gpuMetrics.GPUVRAM(gpuVRAMPointer);
+                            var gpuVRAM = ADLX.intP_value(gpuVRAMPointer);
+
+                            var gpuVRAMClockSpeedPointer = ADLX.new_intP();
+                            gpuMetrics.GPUVRAMClockSpeed(gpuVRAMClockSpeedPointer);
+                            var gpuVRAMClockSpeed = ADLX.intP_value(gpuVRAMClockSpeedPointer);
+
+                            Console.WriteLine($"[{gpuTimeStamp}] GPU {i} ClockSpeed={gpuClockSpeed} FanSpeed={gpuFanSpeed} HotspotTemperature={gpuHotspotTemperature} IntakeTemperature={gpuIntakeTemperature} Power={gpuPower} Temperature={gpuTemperature} TotalBoardPower={gpuTotalBoardPower} Usage={gpuUsage} Voltage={gpuVoltage} VRAM={gpuVRAM} VRAMClockSpeed={gpuVRAMClockSpeed}");
+                        }
                     }
                     else
                     {

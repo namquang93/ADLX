@@ -166,4 +166,7 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXAllMetrics*, allMetricsP_Ptr);
 %ppointer_functions(IADLXFPS*, fpsP_Ptr);
 %ppointer_functions(IADLXSystemMetrics*, systemMetricsP_Ptr);
+%ppointer_functions(IADLXGPUList*, gpuListP_Ptr);
+%ppointer_functions(IADLXGPU*, gpuP_Ptr);
+%ppointer_functions(IADLXGPUMetrics*, gpuMetricsP_Ptr);
 %ppointer_functions(char*, charP_Ptr);
