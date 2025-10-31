@@ -110,6 +110,7 @@
     <Compile Include="ADLXDepends\ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs" />
     <Compile Include="ADLXDepends\ADLX_WHITE_POINT.cs" />
     <Compile Include="ADLXDepends\IADLMapping.cs" />
+    <Compile Include="ADLXDepends\IADLX3DAMDFluidMotionFrames.cs" />
     <Compile Include="ADLXDepends\IADLX3DAnisotropicFiltering.cs" />
     <Compile Include="ADLXDepends\IADLX3DAntiAliasing.cs" />
     <Compile Include="ADLXDepends\IADLX3DAntiLag.cs" />
@@ -123,9 +124,11 @@
     <Compile Include="ADLXDepends\IADLX3DRadeonSuperResolution.cs" />
     <Compile Include="ADLXDepends\IADLX3DResetShaderCache.cs" />
     <Compile Include="ADLXDepends\IADLX3DSettingsChangedEvent.cs" />
+    <Compile Include="ADLXDepends\IADLX3DSettingsChangedEvent1.cs" />
     <Compile Include="ADLXDepends\IADLX3DSettingsChangedHandling.cs" />
     <Compile Include="ADLXDepends\IADLX3DSettingsChangedListener.cs" />
     <Compile Include="ADLXDepends\IADLX3DSettingsServices.cs" />
+    <Compile Include="ADLXDepends\IADLX3DSettingsServices1.cs" />
     <Compile Include="ADLXDepends\IADLX3DTessellation.cs" />
     <Compile Include="ADLXDepends\IADLX3DWaitForVerticalRefresh.cs" />
     <Compile Include="ADLXDepends\IADLXAllMetrics.cs" />
@@ -183,6 +186,7 @@
     <Compile Include="ADLXDepends\SWIGTYPE_p_int.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_long.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_long_long.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAMDFluidMotionFrames.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAnisotropicFiltering.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAntiAliasing.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DAntiLag.cs" />
@@ -196,6 +200,7 @@
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DResetShaderCache.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DSettingsChangedHandling.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DSettingsServices.cs" />
+    <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DSettingsServices1.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DTessellation.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLX3DWaitForVerticalRefresh.cs" />
     <Compile Include="ADLXDepends\SWIGTYPE_p_p_adlx__IADLXAllMetrics.cs" />

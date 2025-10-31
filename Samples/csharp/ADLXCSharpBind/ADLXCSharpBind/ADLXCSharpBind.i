@@ -12,6 +12,7 @@
 #include "../../../../SDK/Include/IPerformanceMonitoring.h"
 #include "../../../../SDK/Include/ADLXStructures.h"
 #include "../../../../SDK/Include/I3DSettings.h"
+#include "../../../../SDK/Include/I3DSettings1.h"
 #include "../../../../SDK/Include/ISystem.h"
 #include "../../../../SDK/Include/ILog.h"
 #include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -103,6 +104,7 @@ typedef WCHAR TCHAR;
 %include "../../../../SDK/Include/IDisplays.h"
 %include "../../../../SDK/Include/IPerformanceMonitoring.h"
 %include "../../../../SDK/Include/I3DSettings.h"
+%include "../../../../SDK/Include/I3DSettings1.h"
 %include "../../../../SDK/Include/ADLXStructures.h"
 %include "../../../../SDK/Include/ISystem.h"
 %include "../../../../SDK/Include/ILog.h"
@@ -198,4 +200,6 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLX3DResetShaderCache*, threeDResetShaderCacheP_Ptr);
 %ppointer_functions(IADLX3DTessellation*, threeDTessellationP_Ptr);
 %ppointer_functions(IADLX3DWaitForVerticalRefresh*, threeDWaitForVerticalRefreshP_Ptr);
+%ppointer_functions(IADLX3DSettingsServices1*, threeDSettingsSer1P_Ptr);
+%ppointer_functions(IADLX3DAMDFluidMotionFrames*, threeDAMDFluidMotionFramesP_Ptr);
 %ppointer_functions(char*, charP_Ptr);
