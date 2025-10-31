@@ -13,6 +13,7 @@
 #include "../../../../SDK/Include/ADLXStructures.h"
 #include "../../../../SDK/Include/I3DSettings.h"
 #include "../../../../SDK/Include/I3DSettings1.h"
+#include "../../../../SDK/Include/I3DSettings2.h"
 #include "../../../../SDK/Include/ISystem.h"
 #include "../../../../SDK/Include/ILog.h"
 #include "../../../../SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
@@ -105,6 +106,7 @@ typedef WCHAR TCHAR;
 %include "../../../../SDK/Include/IPerformanceMonitoring.h"
 %include "../../../../SDK/Include/I3DSettings.h"
 %include "../../../../SDK/Include/I3DSettings1.h"
+%include "../../../../SDK/Include/I3DSettings2.h"
 %include "../../../../SDK/Include/ADLXStructures.h"
 %include "../../../../SDK/Include/ISystem.h"
 %include "../../../../SDK/Include/ILog.h"
@@ -187,6 +189,8 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
 %ppointer_functions(IADLX3DSettingsServices*, threeDSettingsSerP_Ptr);
 %ppointer_functions(IADLX3DSettingsChangedHandling*, threeDSettingsChangedHandlingP_Ptr);
+%ppointer_functions(IADLX3DSettingsChangedListener*, threeDSettingsChangedListenerP_Ptr);
+%ppointer_functions(IADLX3DSettingsChangedEvent*, threeDSettingsChangedEventP_Ptr);
 %ppointer_functions(IADLX3DAnisotropicFiltering*, threeDAnisotropicFilteringP_Ptr);
 %ppointer_functions(IADLX3DAntiAliasing*, threeDAntiAliasingP_Ptr);
 %ppointer_functions(IADLX3DAntiLag*, threeDAntiLagP_Ptr);
@@ -202,4 +206,6 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLX3DWaitForVerticalRefresh*, threeDWaitForVerticalRefreshP_Ptr);
 %ppointer_functions(IADLX3DSettingsServices1*, threeDSettingsSer1P_Ptr);
 %ppointer_functions(IADLX3DAMDFluidMotionFrames*, threeDAMDFluidMotionFramesP_Ptr);
+%ppointer_functions(IADLX3DSettingsServices2*, threeDSettingsSer2P_Ptr);
+%ppointer_functions(IADLX3DImageSharpenDesktop*, threeDImageSharpenDesktopP_Ptr);
 %ppointer_functions(char*, charP_Ptr);

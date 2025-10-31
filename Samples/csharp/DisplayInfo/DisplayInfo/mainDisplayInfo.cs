@@ -126,9 +126,9 @@ namespace DisplayInfo
                     SWIGTYPE_p_p_adlx__IADLX3DSettingsServices threeDSettingsServicesPointer = ADLX.new_threeDSettingsSerP_Ptr();
                     sys.Get3DSettingsServices(threeDSettingsServicesPointer);
                     IntPtr cPtr = ADLXPINVOKE.threeDSettingsSerP_Ptr_value(SWIGTYPE_p_p_adlx__IADLX3DSettingsServices.getCPtr(threeDSettingsServicesPointer));
-                    IADLX3DSettingsServices1 threeDSettingsServices1 = new IADLX3DSettingsServices1(cPtr, false);
+                    IADLX3DSettingsServices2 threeDSettingsServices = new IADLX3DSettingsServices2(cPtr, false);
                     SWIGTYPE_p_p_adlx__IADLX3DAMDFluidMotionFrames threeDAMDFluidMotionFramesPointer = ADLX.new_threeDAMDFluidMotionFramesP_Ptr();
-                    threeDSettingsServices1.GetAMDFluidMotionFrames(threeDAMDFluidMotionFramesPointer);
+                    threeDSettingsServices.GetAMDFluidMotionFrames(threeDAMDFluidMotionFramesPointer);
                     IADLX3DAMDFluidMotionFrames threeDAMDFluidMotionFrames = ADLX.threeDAMDFluidMotionFramesP_Ptr_value(threeDAMDFluidMotionFramesPointer);
                     //threeDAMDFluidMotionFrames.SetEnabled(false);
                     SWIGTYPE_p_bool afmfEnabledPointer = ADLX.new_boolP();
@@ -136,7 +136,8 @@ namespace DisplayInfo
                     bool afmfEnabled = ADLX.boolP_value(afmfEnabledPointer);
                     Console.WriteLine($"AMD Fluid Motion Frames Enabled={afmfEnabled}");
                     threeDAMDFluidMotionFrames.Release();
-                    
+
+
                     if (res == ADLX_RESULT.ADLX_OK)
                     {
                         SWIGTYPE_p_p_adlx__IADLXSystemMetricsSupport systemMetricsSupportPointer = ADLX.new_systemMetricsSupportP_Ptr();
@@ -301,16 +302,20 @@ namespace DisplayInfo
                             Console.WriteLine($"[{gpuTimeStamp}] GPU {i} ClockSpeed={gpuClockSpeed} FanSpeed={gpuFanSpeed} HotspotTemperature={gpuHotspotTemperature} IntakeTemperature={gpuIntakeTemperature} Power={gpuPower} Temperature={gpuTemperature} TotalBoardPower={gpuTotalBoardPower} Usage={gpuUsage} Voltage={gpuVoltage} VRAM={gpuVRAM} VRAMClockSpeed={gpuVRAMClockSpeed}");
                             gpuMetrics.Release();
 
-                            SWIGTYPE_p_p_adlx__IADLX3DSettingsChangedHandling threeDSettingsChangedHandlingPointer = ADLX.new_threeDSettingsChangedHandlingP_Ptr();
-                            threeDSettingsServices1.Get3DSettingsChangedHandling(threeDSettingsChangedHandlingPointer);
-                            IADLX3DSettingsChangedHandling threeDSettingsChangedHandling = ADLX.threeDSettingsChangedHandlingP_Ptr_value(threeDSettingsChangedHandlingPointer);
-                            //IADLX3DSettingsChangedListener threeDSettingsChangedListener = new IADLX3DSettingsChangedListener();
+                            //SWIGTYPE_p_p_adlx__IADLX3DSettingsChangedHandling threeDSettingsChangedHandlingPointer = ADLX.new_threeDSettingsChangedHandlingP_Ptr();
+                            //threeDSettingsServices.Get3DSettingsChangedHandling(threeDSettingsChangedHandlingPointer);
+                            //IADLX3DSettingsChangedHandling threeDSettingsChangedHandling = ADLX.threeDSettingsChangedHandlingP_Ptr_value(threeDSettingsChangedHandlingPointer);
+                            //var threeDSettingsChangedListenerPointer = ADLX.new_threeDSettingsChangedListenerP_Ptr();
+                            //IADLX3DSettingsChangedListener threeDSettingsChangedListener = ADLX.threeDSettingsChangedListenerP_Ptr_value(threeDSettingsChangedListenerPointer);
+                            //var threeDSettingsChangedEventPointer = ADLX.new_threeDSettingsChangedEventP_Ptr();
+                            //IADLX3DSettingsChangedEvent threeDSettingsChangedEvent = ADLX.threeDSettingsChangedEventP_Ptr_value(threeDSettingsChangedEventPointer);
+                            //threeDSettingsChangedListener.On3DSettingsChanged(threeDSettingsChangedEvent);
                             //threeDSettingsChangedHandling.Add3DSettingsEventListener(threeDSettingsChangedListener);
-                            Console.WriteLine("Got 3DSettingsChangedHandling");
-                            threeDSettingsChangedHandling.Release();
+                            //Console.WriteLine("Got 3DSettingsChangedHandling");
+                            //threeDSettingsChangedHandling.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DAnisotropicFiltering threeDAnisotropicFilteringPointer = ADLX.new_threeDAnisotropicFilteringP_Ptr();
-                            threeDSettingsServices1.GetAnisotropicFiltering(gpu, threeDAnisotropicFilteringPointer);
+                            threeDSettingsServices.GetAnisotropicFiltering(gpu, threeDAnisotropicFilteringPointer);
                             IADLX3DAnisotropicFiltering threeDAnisotropicFiltering = ADLX.threeDAnisotropicFilteringP_Ptr_value(threeDAnisotropicFilteringPointer);
                             SWIGTYPE_p_bool threeDAnisotropicFilteringIsSupportedPointer = ADLX.new_boolP();
                             threeDAnisotropicFiltering.IsSupported(threeDAnisotropicFilteringIsSupportedPointer);
@@ -327,7 +332,7 @@ namespace DisplayInfo
                             threeDAnisotropicFiltering.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DAntiAliasing threeDAntiAliasingPointer = ADLX.new_threeDAntiAliasingP_Ptr();
-                            threeDSettingsServices1.GetAntiAliasing(gpu, threeDAntiAliasingPointer);
+                            threeDSettingsServices.GetAntiAliasing(gpu, threeDAntiAliasingPointer);
                             IADLX3DAntiAliasing threeDAntiAliasing = ADLX.threeDAntiAliasingP_Ptr_value(threeDAntiAliasingPointer);
                             SWIGTYPE_p_bool threeDAntiAliasingSupportedPointer = ADLX.new_boolP();
                             threeDAntiAliasing.IsSupported(threeDAntiAliasingSupportedPointer);
@@ -345,59 +350,59 @@ namespace DisplayInfo
                             threeDAntiAliasing.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DAntiLag threeDAntiLagPointer = ADLX.new_threeDAntiLagP_Ptr();
-                            threeDSettingsServices1.GetAntiLag(gpu, threeDAntiLagPointer);
+                            threeDSettingsServices.GetAntiLag(gpu, threeDAntiLagPointer);
                             IADLX3DAntiLag threeDAntiLag = ADLX.threeDAntiLagP_Ptr_value(threeDAntiLagPointer);
                             threeDAntiLag.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DBoost threeDBoostPointer = ADLX.new_threeDBoostP_Ptr();
-                            threeDSettingsServices1.GetBoost(gpu, threeDBoostPointer);
+                            threeDSettingsServices.GetBoost(gpu, threeDBoostPointer);
                             IADLX3DBoost threeDBoost = ADLX.threeDBoostP_Ptr_value(threeDBoostPointer);
                             //threeDBoost.SetEnabled(true);
                             threeDBoost.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DChill threeDChillPointer = ADLX.new_threeDChillP_Ptr();
-                            threeDSettingsServices1.GetChill(gpu, threeDChillPointer);
+                            threeDSettingsServices.GetChill(gpu, threeDChillPointer);
                             IADLX3DChill threeDChill = ADLX.threeDChillP_Ptr_value(threeDChillPointer);
                             threeDChill.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DEnhancedSync threeDEnhancedSyncPointer = ADLX.new_threeDEnhancedSyncP_Ptr();
-                            threeDSettingsServices1.GetEnhancedSync(gpu, threeDEnhancedSyncPointer);
+                            threeDSettingsServices.GetEnhancedSync(gpu, threeDEnhancedSyncPointer);
                             IADLX3DEnhancedSync threeDEnhancedSync = ADLX.threeDEnhancedSyncP_Ptr_value(threeDEnhancedSyncPointer);
                             //threeDEnhancedSync.SetEnabled(false);
                             threeDEnhancedSync.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DFrameRateTargetControl threeDFrameRateTargetControlPointer = ADLX.new_threeDFrameRateTargetControlP_Ptr();
-                            threeDSettingsServices1.GetFrameRateTargetControl(gpu, threeDFrameRateTargetControlPointer);
+                            threeDSettingsServices.GetFrameRateTargetControl(gpu, threeDFrameRateTargetControlPointer);
                             IADLX3DFrameRateTargetControl threeDFrameRateTargetControl = ADLX.threeDFrameRateTargetControlP_Ptr_value(threeDFrameRateTargetControlPointer);
                             //threeDFrameRateTargetControl.SetFPS(60);
                             threeDFrameRateTargetControl.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DImageSharpening threeDImageSharpeningPointer = ADLX.new_threeDImageSharpeningP_Ptr();
-                            threeDSettingsServices1.GetImageSharpening(gpu, threeDImageSharpeningPointer);
+                            threeDSettingsServices.GetImageSharpening(gpu, threeDImageSharpeningPointer);
                             IADLX3DImageSharpening threeDImageSharpening = ADLX.threeDImageSharpeningP_Ptr_value(threeDImageSharpeningPointer);
                             //threeDImageSharpening.SetSharpness(50);
                             threeDImageSharpening.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DMorphologicalAntiAliasing threeDMorphologicalAntiAliasingPointer = ADLX.new_threeDMorphologicalAntiAliasingP_Ptr();
-                            threeDSettingsServices1.GetMorphologicalAntiAliasing(gpu, threeDMorphologicalAntiAliasingPointer);
+                            threeDSettingsServices.GetMorphologicalAntiAliasing(gpu, threeDMorphologicalAntiAliasingPointer);
                             IADLX3DMorphologicalAntiAliasing threeDMorphologicalAntiAliasing = ADLX.threeDMorphologicalAntiAliasingP_Ptr_value(threeDMorphologicalAntiAliasingPointer);
                             //threeDMorphologicalAntiAliasing.SetEnabled(false);
                             threeDMorphologicalAntiAliasing.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DRadeonSuperResolution threeDRadeonSuperResolutionPointer = ADLX.new_threeDRadeonSuperResolutionP_Ptr();
-                            threeDSettingsServices1.GetRadeonSuperResolution(threeDRadeonSuperResolutionPointer);
+                            threeDSettingsServices.GetRadeonSuperResolution(threeDRadeonSuperResolutionPointer);
                             IADLX3DRadeonSuperResolution threeDRadeonSuperResolution = ADLX.threeDRadeonSuperResolutionP_Ptr_value(threeDRadeonSuperResolutionPointer);
                             //threeDRadeonSuperResolution.SetEnabled(false);
                             threeDRadeonSuperResolution.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DResetShaderCache threeDResetShaderCachePointer = ADLX.new_threeDResetShaderCacheP_Ptr();
-                            threeDSettingsServices1.GetResetShaderCache(gpu, threeDResetShaderCachePointer);
+                            threeDSettingsServices.GetResetShaderCache(gpu, threeDResetShaderCachePointer);
                             IADLX3DResetShaderCache threeDResetShaderCache = ADLX.threeDResetShaderCacheP_Ptr_value(threeDResetShaderCachePointer);
                             //threeDResetShaderCache.ResetShaderCache();
                             threeDResetShaderCache.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DTessellation threeDTessellationPointer = ADLX.new_threeDTessellationP_Ptr();
-                            threeDSettingsServices1.GetTessellation(gpu, threeDTessellationPointer);
+                            threeDSettingsServices.GetTessellation(gpu, threeDTessellationPointer);
                             IADLX3DTessellation threeDTessellation = ADLX.threeDTessellationP_Ptr_value(threeDTessellationPointer);
                             SWIGTYPE_p_ADLX_TESSELLATION_LEVEL tessellationLevelPointer = ADLX.new_tesselationLevelP();
                             threeDTessellation.GetLevel(tessellationLevelPointer);
@@ -408,12 +413,17 @@ namespace DisplayInfo
                             threeDTessellation.Release();
 
                             SWIGTYPE_p_p_adlx__IADLX3DWaitForVerticalRefresh threeDWaitForVerticalRefreshPointer = ADLX.new_threeDWaitForVerticalRefreshP_Ptr();
-                            threeDSettingsServices1.GetWaitForVerticalRefresh(gpu, threeDWaitForVerticalRefreshPointer);
+                            threeDSettingsServices.GetWaitForVerticalRefresh(gpu, threeDWaitForVerticalRefreshPointer);
                             IADLX3DWaitForVerticalRefresh threeDWaitForVerticalRefresh = ADLX.threeDWaitForVerticalRefreshP_Ptr_value(threeDWaitForVerticalRefreshPointer);
                             SWIGTYPE_p_ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE waitForVerticalRefreshPointer = ADLX.new_waitForVerticalRefreshModeP();
                             threeDWaitForVerticalRefresh.GetMode(waitForVerticalRefreshPointer);
                             ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE waitForVerticalRefresh = ADLX.waitForVerticalRefreshModeP_value(waitForVerticalRefreshPointer);
                             threeDWaitForVerticalRefresh.Release();
+
+                            var threeDImageSharpenDesktopPointer = ADLX.new_threeDImageSharpenDesktopP_Ptr();
+                            threeDSettingsServices.GetImageSharpenDesktop(gpu, threeDImageSharpenDesktopPointer);
+                            var threeDImageSharpenDesktop = ADLX.threeDImageSharpenDesktopP_Ptr_value(threeDImageSharpenDesktopPointer);
+                            threeDImageSharpenDesktop.Release();
 
                             gpu.Release();
                         }
@@ -441,7 +451,7 @@ namespace DisplayInfo
                         Console.WriteLine("Can't get performance monitoring services");
                     }
 
-                    threeDSettingsServices1.Release();
+                    threeDSettingsServices.Release();
                 }
             }
             else
