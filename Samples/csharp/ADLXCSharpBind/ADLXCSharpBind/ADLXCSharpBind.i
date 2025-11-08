@@ -94,6 +94,7 @@ typedef WCHAR TCHAR;
 
 /* Callback to turn on director wrapping */
 %feature("director") IADLXDisplayListChangedListener;
+%feature("director") IADLX3DSettingsChangedListener;
 
 %include stdint.i
 %include carrays.i
@@ -189,7 +190,6 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
 %ppointer_functions(IADLX3DSettingsServices*, threeDSettingsSerP_Ptr);
 %ppointer_functions(IADLX3DSettingsChangedHandling*, threeDSettingsChangedHandlingP_Ptr);
-%ppointer_functions(IADLX3DSettingsChangedListener*, threeDSettingsChangedListenerP_Ptr);
 %ppointer_functions(IADLX3DSettingsChangedEvent*, threeDSettingsChangedEventP_Ptr);
 %ppointer_functions(IADLX3DAnisotropicFiltering*, threeDAnisotropicFilteringP_Ptr);
 %ppointer_functions(IADLX3DAntiAliasing*, threeDAntiAliasingP_Ptr);
