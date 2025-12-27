@@ -179,6 +179,7 @@ TYPE2 NAME(TYPE1 x) {
 %ppointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
 %ppointer_functions(IADLXPerformanceMonitoringServices*, performanceMonitoringSerP_Ptr);
 %ppointer_functions(IADLXSystemMetricsSupport*, systemMetricsSupportP_Ptr);
+%ppointer_functions(IADLXGPUMetricsSupport*, gpuMetricsSupportP_Ptr);
 %ppointer_functions(IADLXAllMetricsList*, allMetricsListP_Ptr);
 %ppointer_functions(IADLXAllMetrics*, allMetricsP_Ptr);
 %ppointer_functions(IADLXFPS*, fpsP_Ptr);
